@@ -35,7 +35,7 @@ This repository serves as a comprehensive guide to my portfolio development jour
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio-website.git
+   git clone https://github.com/jpalvarado101/portfoliowebsite.git
    ```
 2. Install dependencies:
    ```bash
