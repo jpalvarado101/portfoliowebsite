@@ -9,19 +9,18 @@ export default function Home() {
       <section className="flex justify-center items-center bg-black-100 text-white min-h-screen w-full">
         <div className="w-full">
           <Hero />
-          <Grid />
         </div>
       </section>
 
       {/* Orange Section */}
-      <section className="flex justify-center items-center !bg-orange-500 min-h-screen w-full">
+      <section className="flex justify-center items-center bg-black-100 text-white min-h-screen w-full">
         <div className="w-full">
-          <h1 className="text-3xl font-bold">Orange Section</h1>
+          <Grid />
         </div>
       </section>
 
       {/* White Section */}
-      <section className="flex justify-center items-center bg-white min-h-screen w-full">
+      <section className="flex justify-center items-center bg-black-100 text-white min-h-screen w-full">
         <div className="w-full">
           <h1 className="text-3xl font-bold">White Section</h1>
         </div>
