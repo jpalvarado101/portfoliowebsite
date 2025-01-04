@@ -1,3 +1,4 @@
+import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <section className="flex justify-center items-center bg-black-100 text-white min-h-screen w-full">
         <div className="w-full">
           <Hero />
+          <Grid />
         </div>
       </section>
 

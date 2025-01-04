@@ -2,6 +2,8 @@ import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { FlipWords } from "./ui/flip-words";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import MagicButton from "./ui/bordermagicbutton";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   const words = ["smart", "cute", "beautiful", "modern"];
@@ -34,7 +36,7 @@ const Hero = () => {
             words="Hi my name is John"
           />
           <FlipWords
-            className="text-regular text-center md:text-5xl lg:text-6xl"
+            className="text-regular text-center text-purple md:text-5xl lg:text-6xl"
             words={words}
             duration={100}
           />
@@ -42,6 +44,13 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi, I am John, a computer engineer based in Canada.
           </p>
+          <a href="#projects">
+            <MagicButton
+              title="Show my work"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </a>
         </div>
       </div>
     </div>
