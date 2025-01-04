@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-extrasmall {
+  font-size: 1rem;
+}
+
+.text-small {
+  font-size: 2rem;
+}
+
+.text-regular {
+  font-size: 3rem;
+}
+
+.text-large {
+  font-size: 4rem;
+}
+
+.text-extra-large {
+  font-size: 5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
