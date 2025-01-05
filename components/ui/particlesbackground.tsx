@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
 import { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles"; // Use the full bundle
+import { loadFull } from "tsparticles";
 
 const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
@@ -26,25 +26,39 @@ const ParticlesBackground = () => {
       links: {
         color: "#ffffff",
         enable: true,
-        distance: 150,
+        distance: 170, // Increase link distance for more connections
         opacity: 0.5,
-        width: 1,
+        width: 1, // Thicker links for better visibility
       },
       move: {
         enable: true,
-        speed: 6,
+        speed: 2, // Slower particle movement
         direction: "none",
         random: false,
         straight: false,
         outModes: { default: "bounce" },
       },
       number: {
-        value: 80,
+        value: 120, // Increase number of particles for more links
         density: { enable: true, area: 800 },
       },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 5 } },
+    },
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "repulse", // Push particles away when hovering
+        },
+      },
+      modes: {
+        repulse: {
+          distance: 100, // How far particles are pushed away
+          duration: 0.4, // How quickly they move away
+        },
+      },
     },
     detectRetina: true,
   };
