@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-const OrangeSection = () => {
+const AboutSection = () => {
   const ref = useRef(null);
 
   // Track the scroll progress of this section
@@ -20,7 +20,7 @@ const OrangeSection = () => {
 
   return (
     <section
-      id="orange"
+      id="about"
       className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black min-h-screen px-6 sm:px-12 overflow-hidden"
       ref={ref} // Attach the section to the ref
     >
@@ -36,10 +36,10 @@ const OrangeSection = () => {
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
           style={{ translateY: textY, opacity }}
         >
-          <h2 className="text-5xl sm:text-6xl font-serif font-bold mb-6">
-            Who is Chad?
+          <h2 className="text-5xl sm:text-6xl text-[#343434] font-serif font-bold mb-6">
+            Who is John?
           </h2>
-          <p className="text-lg sm:text-xl text-black mb-6 leading-relaxed">
+          <p className="mt-60 text-lg sm:text-xl text-[#343434] mb-6 leading-relaxed">
             As a Computer Engineering graduate with a strong foundation in
             machine learning (ML), artificial intelligence (AI), and computer
             vision, I specialize in designing and optimizing scalable AI systems
@@ -60,7 +60,7 @@ const OrangeSection = () => {
             reconstruction, delivering high-precision outputs for practical
             applications.
           </p>
-          <hr className="border-black w-16" />
+          <hr className="border-2 border-[#343434] w-40" />
         </motion.div>
 
         {/* Right Content: Circular Image */}
@@ -80,4 +80,4 @@ const OrangeSection = () => {
   );
 };
 
-export default OrangeSection;
+export default AboutSection;
