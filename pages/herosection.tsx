@@ -19,8 +19,8 @@ const HeroSection = () => {
             12,635 Happy Users
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
-            Convert your missed calls <br />
-            into <span className="text-orange-500">paying customers</span>
+            Transforming Ideas <br />
+            Into <span className="text-orange-500">Reality</span>
           </h1>
           <p className="text-lg text-gray-300 mb-6">
             Our automatic answer bot gets the customer details and logs their
@@ -39,7 +39,7 @@ const HeroSection = () => {
         {/* Right Content: Key Visual */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <img
-            src="/path/to/your/image.png" // Replace with your image path
+            src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
             alt="Key Visual"
             className="max-w-full h-auto"
           />
