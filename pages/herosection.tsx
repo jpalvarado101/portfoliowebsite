@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative flex justify-center items-center bg-black text-white min-h-screen"
+      className="relative flex justify-center items-center bg-black text-white min-h-screen h-auto"
     >
       {/* Particles Background */}
       <ParticlesBackground />
