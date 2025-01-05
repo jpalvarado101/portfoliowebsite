@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white z-50">
       <ul className="flex justify-around p-4">
         <li>
           <a
@@ -24,7 +24,7 @@ export default function Navbar() {
         <li>
           <a
             href="#white"
-            className="text-black hover:text-orange-500 transition"
+            className="text-black hover:text-blue-500 transition"
           >
             White Section
           </a>
