@@ -1,46 +1,91 @@
 "use client"; // Ensure this is a client component
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import React, { useRef, useEffect } from "react";
 
 const AboutSection = () => {
   const ref = useRef(null);
 
-  // Track the scroll progress of this section
-  const { scrollYProgress } = useScroll({
-    target: ref, // Observe the section
-    offset: ["-66% start", "33% start"], // Start earlier, finish earlier
-  });
+  // Animation controls for elements
+  const headingAnimation = useAnimation();
+  const paragraphAnimation = useAnimation();
+  const imageAnimation = useAnimation();
 
-  // Parallax effects for elements
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]); // Background parallax
-  const textY = useTransform(scrollYProgress, [0.1, 0.5], ["100px", "0px"]); // Faster slide
-  const imageY = useTransform(scrollYProgress, [0.1, 0.5], ["100px", "0px"]); // Faster slide
-  const opacity = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]); // Fade-in happens earlier and faster
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          headingAnimation.start("visible");
+          paragraphAnimation.start("visible");
+          imageAnimation.start("visible");
+        } else {
+          headingAnimation.start("hidden");
+          paragraphAnimation.start("hidden");
+          imageAnimation.start("hidden");
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [headingAnimation, paragraphAnimation, imageAnimation]);
 
   return (
     <section
       id="about"
       className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black 
         min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12"
-      ref={ref} // Attach the section to the ref
+      ref={ref}
     >
-      {/* Parallax Background */}
-      <motion.div
-        className="absolute inset-0 bg-[#b4b0ab] z-0"
-        style={{ translateY: backgroundY }}
-      />
-
       <div className="relative max-w-7xl w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
         {/* Left Content: Text */}
         <motion.div
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
-          style={{ translateY: textY, opacity }}
+          initial="hidden"
+          animate={headingAnimation}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, ease: "easeOut" },
+            },
+          }}
         >
-          <h2 className="mt-20 sm:mt-10 lg:mt-0 text-3xl sm:text-4xl lg:text-5xl text-[#343434] font-serif font-bold">
+          <motion.h2
+            className="mt-20 sm:mt-10 lg:mt-0 text-3xl sm:text-4xl lg:text-5xl text-[#343434] font-serif font-bold"
+            initial="hidden"
+            animate={headingAnimation}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1, ease: "easeOut" },
+              },
+            }}
+          >
             Who is John?
-          </h2>
-          <p className="mt-10 lg:mt-40 text-base sm:text-lg lg:text-xl text-[#343434] mb-6 leading-relaxed">
+          </motion.h2>
+          <motion.p
+            className="mt-10 lg:mt-40 text-base sm:text-lg lg:text-xl text-[#343434] mb-6 leading-relaxed"
+            initial="hidden"
+            animate={paragraphAnimation}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+              },
+            }}
+          >
             As a Computer Engineering graduate with a strong foundation in
             machine learning (ML), artificial intelligence (AI), and computer
             vision, I specialize in designing and optimizing scalable AI systems
@@ -60,19 +105,50 @@ const AboutSection = () => {
             experience in object detection, semantic segmentation, and 3D
             reconstruction, delivering high-precision outputs for practical
             applications.
-          </p>
-          <hr className="border-2 border-[#343434] w-40 mb-10" />
+          </motion.p>
+          <motion.hr
+            className="border-2 border-[#343434] w-40 mb-10"
+            initial="hidden"
+            animate={headingAnimation}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1, delay: 0.4, ease: "easeOut" },
+              },
+            }}
+          />
         </motion.div>
 
         {/* Right Content: Circular Image */}
         <motion.div
           className="flex-1 flex justify-center"
-          style={{ translateY: imageY, opacity }}
+          initial="hidden"
+          animate={imageAnimation}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.6, ease: "easeOut" },
+            },
+          }}
         >
           <div className="rounded-full overflow-hidden w-60 h-60 sm:w-80 sm:h-80">
             <motion.img
               src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
               className="object-cover w-full h-full"
+              initial="hidden"
+              animate={imageAnimation}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 1, delay: 0.8, ease: "easeOut" },
+                },
+              }}
             />
           </div>
         </motion.div>
