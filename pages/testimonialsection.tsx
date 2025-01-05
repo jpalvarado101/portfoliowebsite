@@ -1,7 +1,7 @@
-const WhiteSection = () => {
+const TestimonialSection = () => {
   return (
     <section
-      id="white"
+      id="project"
       className="relative flex justify-center items-center bg-white min-h-screen"
     >
       <div className="max-w-7xl w-full">
@@ -11,4 +11,4 @@ const WhiteSection = () => {
   );
 };
 
-export default WhiteSection;
+export default TestimonialSection;

@@ -2,8 +2,8 @@
 
 import Navbar from "@/components/navbar";
 import HeroSection from "@/pages/herosection";
-import OrangeSection from "@/pages/orangesection";
-import WhiteSection from "@/pages/whitesection";
+import AboutSection from "@/pages/aboutsection";
+import ProjectSection from "@/pages/projectsection";
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
         <HeroSection />
 
         {/* Orange Section */}
-        <OrangeSection />
+        <AboutSection />
 
         {/* White Section */}
-        <WhiteSection />
+        <ProjectSection />
       </main>
     </>
   );

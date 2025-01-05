@@ -16,21 +16,21 @@ export default function Navbar() {
         <div className="flex justify-center sm:justify-start space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
           <a
             href="#hero"
-            className="text-sm sm:text-small text-black hover:text-orange-500 transition"
+            className="text-lg sm:text-base text-black hover:text-orange-500 transition"
           >
             Home
           </a>
           <a
-            href="#orange"
-            className="text-sm sm:text-base text-black hover:text-orange-500 transition"
+            href="#about"
+            className="text-lg sm:text-base text-black hover:text-orange-500 transition"
           >
             About
           </a>
           <a
-            href="#white"
-            className="text-sm sm:text-base text-black hover:text-blue-500 transition"
+            href="#project"
+            className="text-lg sm:text-base text-black hover:text-blue-500 transition"
           >
-            Experiences
+            Projects
           </a>
         </div>
 
@@ -40,7 +40,7 @@ export default function Navbar() {
             href="#"
             className="text-lg sm:text-xl font-bold text-black whitespace-nowrap"
           >
-            LOGO
+            JFA — 10
           </a>
         </div>
 
