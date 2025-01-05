@@ -1,19 +1,41 @@
-"use client";
+import Image from "next/image";
+import Navbar from "@/components/navbar";
 
-import { navItems } from "@/data";
-
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-
-const Home = () => {
+export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <Hero />
-        <Grid />
-      </div>
-    </main>
-  );
-};
+    <>
+      <Navbar />
+      <main className="relative flex flex-col overflow-hidden mx-auto">
+        {/* Hero Section - Black Background */}
+        <section
+          id="hero"
+          className="flex justify-center items-center bg-black text-white min-h-screen"
+        >
+          <div className="max-w-7xl w-full">
+            <h1 className="text-3xl font-bold">Hero Section</h1>
+          </div>
+        </section>
 
-export default Home;
+        {/* Orange Section */}
+        <section
+          id="orange"
+          className="flex justify-center items-center bg-orange-500 min-h-screen"
+        >
+          <div className="max-w-7xl w-full">
+            <h1 className="text-3xl font-bold">Orange Section</h1>
+          </div>
+        </section>
+
+        {/* White Section */}
+        <section
+          id="white"
+          className="flex justify-center items-center bg-white min-h-screen"
+        >
+          <div className="max-w-7xl w-full">
+            <h1 className="text-3xl font-bold">White Section</h1>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
