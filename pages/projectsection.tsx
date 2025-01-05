@@ -1,22 +1,75 @@
 "use client";
+
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 const ProjectSection = () => {
+  const ref = useRef(null);
+
+  // Animation controls for cards
+  const cardsAnimation = useAnimation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          cardsAnimation.start("visible");
+        } else {
+          cardsAnimation.start("hidden");
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [cardsAnimation]);
+
   const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+    <motion.div
+      key={card.src}
+      initial="hidden"
+      animate={cardsAnimation}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+            delay: 0.2 * index,
+            ease: "easeOut",
+          },
+        },
+      }}
+    >
+      <Card card={card} index={index} />
+    </motion.div>
   ));
+
   return (
     <section
       id="project"
-      className="relative flex justify-center items-center bg-white min-h-screen"
+      className="relative flex justify-center items-center bg-white  h-auto"
+      ref={ref} // Attach ref to observe the section
     >
       <div className="w-full h-full py-20">
+        {/* Static Heading */}
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
           Get to know your iSad.
         </h2>
-        <Carousel items={cards} />
+
+        {/* Animated Carousel */}
+        <div className="mt-10">
+          <Carousel items={cards} />
+        </div>
       </div>
     </section>
   );
@@ -36,7 +89,7 @@ const data = [
           technology. Experience the power of AI-driven tools tailored for you.
         </p>
         <Image
-          src="/ai-image.jpg"
+          src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg"
           alt="AI Illustration"
           height="500"
           width="500"
@@ -48,7 +101,7 @@ const data = [
   {
     category: "Productivity",
     title: "Enhance your productivity.",
-    src: "/productivity.jpg",
+    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
         <h3 className="text-xl font-bold">Stay organized like never before</h3>
@@ -57,7 +110,7 @@ const data = [
           seamlessly.
         </p>
         <Image
-          src="/productivity-tools.jpg"
+          src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg"
           alt="Productivity tools"
           height="400"
           width="400"
@@ -69,7 +122,7 @@ const data = [
   {
     category: "Product",
     title: "Launching the new Apple Vision Pro.",
-    src: "/apple-vision-pro.jpg",
+    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
         <h3 className="text-xl font-bold text-center">
@@ -85,7 +138,7 @@ const data = [
   {
     category: "Product",
     title: "Maps for your iPhone 15 Pro Max.",
-    src: "/iphone-maps.jpg",
+    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
         <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
@@ -98,7 +151,7 @@ const data = [
   {
     category: "iOS",
     title: "Photography just got better.",
-    src: "/ios-photography.jpg",
+    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
         <h3 className="text-xl font-bold text-center">Capture Every Moment</h3>
@@ -112,7 +165,7 @@ const data = [
   {
     category: "Hiring",
     title: "Hiring for a Staff Software Engineer",
-    src: "/hiring.jpg",
+    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
         <h3 className="text-xl font-bold">Join Our Team</h3>

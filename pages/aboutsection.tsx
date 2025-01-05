@@ -21,7 +21,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black min-h-screen px-6 sm:px-12 overflow-hidden"
+      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black min-h-screen px-6 sm:px-12 overflow-hidden h-auto"
       ref={ref} // Attach the section to the ref
     >
       {/* Parallax Background */}
@@ -36,10 +36,10 @@ const AboutSection = () => {
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
           style={{ translateY: textY, opacity }}
         >
-          <h2 className="text-5xl sm:text-6xl text-[#343434] font-serif font-bold mb-6">
+          <h2 className="mt-20 text-5xl sm:text-6xl text-[#343434] font-serif font-bold">
             Who is John?
           </h2>
-          <p className="mt-60 text-lg sm:text-xl text-[#343434] mb-6 leading-relaxed">
+          <p className="mt-40 text-lg sm:text-xl text-[#343434] mb-6 leading-relaxed">
             As a Computer Engineering graduate with a strong foundation in
             machine learning (ML), artificial intelligence (AI), and computer
             vision, I specialize in designing and optimizing scalable AI systems
@@ -60,7 +60,7 @@ const AboutSection = () => {
             reconstruction, delivering high-precision outputs for practical
             applications.
           </p>
-          <hr className="border-2 border-[#343434] w-40" />
+          <hr className="border-2 border-[#343434] w-40 mb-20" />
         </motion.div>
 
         {/* Right Content: Circular Image */}

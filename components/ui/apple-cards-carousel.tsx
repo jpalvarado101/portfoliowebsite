@@ -118,7 +118,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   opacity: 1,
                   y: 0,
                   transition: {
-                    duration: 0.5,
+                    duration: 1,
                     delay: 0.2 * index,
                     ease: "easeOut",
                     once: true,
