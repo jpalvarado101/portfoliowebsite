@@ -56,15 +56,6 @@ export default function Navbar() {
             <FaFacebookF />
           </a>
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-black hover:text-blue-400 transition text-lg"
-            aria-label="Twitter"
-          >
-            <FaTwitter />
-          </a>
-          <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
