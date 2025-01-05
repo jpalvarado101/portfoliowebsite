@@ -32,6 +32,12 @@ export default function Navbar() {
           >
             Projects
           </a>
+          <a
+            href="#education"
+            className="text-lg sm:text-base text-black hover:text-orange-500 transition"
+          >
+            Education
+          </a>
         </div>
 
         {/* Center Section: Logo */}
