@@ -8,15 +8,20 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 const ProjectSection = () => {
   const ref = useRef(null);
 
-  // Animation controls for cards
+  // Animation controls for text and cards
+  const textAnimation = useAnimation();
   const cardsAnimation = useAnimation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          cardsAnimation.start("visible");
+          textAnimation.start("visible"); // Trigger text animation first
+          setTimeout(() => {
+            cardsAnimation.start("visible"); // Trigger cards animation after delay
+          }, 500); // Delay after text animation starts
         } else {
+          textAnimation.start("hidden");
           cardsAnimation.start("hidden");
         }
       },
@@ -30,7 +35,7 @@ const ProjectSection = () => {
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
-  }, [cardsAnimation]);
+  }, [textAnimation, cardsAnimation]);
 
   const cards = data.map((card, index) => (
     <motion.div
@@ -57,19 +62,58 @@ const ProjectSection = () => {
   return (
     <section
       id="project"
-      className="relative flex justify-center items-center bg-white  h-auto"
+      className="relative flex justify-center items-center bg-white h-auto"
       ref={ref} // Attach ref to observe the section
     >
       <div className="w-full h-full py-20">
-        {/* Static Heading */}
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-          Get to know your iSad.
-        </h2>
+        {/* Animated Headings */}
+        <motion.h2
+          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-[#343434] font-sans"
+          initial="hidden"
+          animate={textAnimation}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, ease: "easeOut" },
+            },
+          }}
+        >
+          Get to know me more.
+        </motion.h2>
+        <motion.h4
+          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-black font-sans mt-4"
+          initial="hidden"
+          animate={textAnimation}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+            },
+          }}
+        >
+          My projects.
+        </motion.h4>
 
         {/* Animated Carousel */}
-        <div className="mt-10">
+        <motion.div
+          style={{ marginTop: "2.5rem" }}
+          initial="hidden"
+          animate={cardsAnimation}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, ease: "easeOut" },
+            },
+          }}
+        >
           <Carousel items={cards} />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -81,15 +125,15 @@ const data = [
   {
     category: "Artificial Intelligence",
     title: "You can do more with AI.",
-    src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
+    src: "/inDoorsapp_waifu2x_photo_noise2.png",
     content: (
       <div>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl font-sans">
           Artificial Intelligence is revolutionizing the way we interact with
           technology. Experience the power of AI-driven tools tailored for you.
         </p>
         <Image
-          src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg"
+          src="/inDoorsapp_waifu2x_photo_noise2.png"
           alt="AI Illustration"
           height="500"
           width="500"
@@ -105,7 +149,7 @@ const data = [
     content: (
       <div>
         <h3 className="text-xl font-bold">Stay organized like never before</h3>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl font-sans">
           Discover tools designed to boost your efficiency and manage your tasks
           seamlessly.
         </p>
@@ -128,7 +172,7 @@ const data = [
         <h3 className="text-xl font-bold text-center">
           The Future of Visual Computing
         </h3>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl font-sans">
           Apple Vision Pro redefines augmented reality with unparalleled
           features and a sleek design.
         </p>

@@ -21,7 +21,8 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black min-h-screen px-6 sm:px-12 overflow-hidden h-auto"
+      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black 
+        min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12"
       ref={ref} // Attach the section to the ref
     >
       {/* Parallax Background */}
@@ -36,10 +37,10 @@ const AboutSection = () => {
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
           style={{ translateY: textY, opacity }}
         >
-          <h2 className="mt-20 text-5xl sm:text-6xl text-[#343434] font-serif font-bold">
+          <h2 className="mt-20 sm:mt-10 lg:mt-0 text-3xl sm:text-4xl lg:text-5xl text-[#343434] font-serif font-bold">
             Who is John?
           </h2>
-          <p className="mt-40 text-lg sm:text-xl text-[#343434] mb-6 leading-relaxed">
+          <p className="mt-10 lg:mt-40 text-base sm:text-lg lg:text-xl text-[#343434] mb-6 leading-relaxed">
             As a Computer Engineering graduate with a strong foundation in
             machine learning (ML), artificial intelligence (AI), and computer
             vision, I specialize in designing and optimizing scalable AI systems
@@ -60,7 +61,7 @@ const AboutSection = () => {
             reconstruction, delivering high-precision outputs for practical
             applications.
           </p>
-          <hr className="border-2 border-[#343434] w-40 mb-20" />
+          <hr className="border-2 border-[#343434] w-40 mb-10" />
         </motion.div>
 
         {/* Right Content: Circular Image */}
@@ -68,7 +69,7 @@ const AboutSection = () => {
           className="flex-1 flex justify-center"
           style={{ translateY: imageY, opacity }}
         >
-          <div className="rounded-full overflow-hidden w-80 h-80">
+          <div className="rounded-full overflow-hidden w-60 h-60 sm:w-80 sm:h-80">
             <motion.img
               src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
               className="object-cover w-full h-full"
