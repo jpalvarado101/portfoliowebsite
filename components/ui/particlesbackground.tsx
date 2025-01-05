@@ -27,7 +27,7 @@ const ParticlesBackground = () => {
         color: "#ffffff",
         enable: true,
         distance: 170, // Increase link distance for more connections
-        opacity: 0.5,
+        opacity: 1,
         width: 1, // Thicker links for better visibility
       },
       move: {
