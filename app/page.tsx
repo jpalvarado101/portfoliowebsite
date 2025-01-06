@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/pages/herosection";
 import AboutSection from "@/pages/aboutsection";
 import ProjectSection from "@/pages/projectsection";
+import EducationSection from "@/pages/educationsection";
+import ExperienceSection from "@/pages/experiencesection";
 
 export default function Home() {
   return (
@@ -18,6 +20,10 @@ export default function Home() {
 
         {/* White Section */}
         <ProjectSection />
+
+        <EducationSection />
+
+        <ExperienceSection />
       </main>
     </>
   );

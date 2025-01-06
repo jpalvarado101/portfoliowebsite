@@ -29,37 +29,37 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
           <a
             href="#hero"
-            className="text-base sm:text-sm text-white hover:text-orange-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-base sm:text-sm text-white hover:text-orange-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             About
           </a>
           <a
             href="#project"
-            className="text-base sm:text-sm text-white hover:text-blue-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-blue-500 transition"
           >
             Projects
           </a>
           <a
             href="#education"
-            className="text-base sm:text-sm text-white hover:text-orange-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             Education
           </a>
           <a
             href="#experience"
-            className="text-base sm:text-sm text-white hover:text-orange-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             Experience
           </a>
           <a
             href="#contact"
-            className="text-base sm:text-sm text-white hover:text-orange-500 transition"
+            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             Contact
           </a>
@@ -92,7 +92,7 @@ export default function Navbar() {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-blue-600 transition text-lg sm:text-base"
+            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-600 transition"
             aria-label="Facebook"
           >
             <FaFacebookF />
@@ -101,7 +101,7 @@ export default function Navbar() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-pink-500 transition text-lg sm:text-base"
+            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-pink-500 transition"
             aria-label="Instagram"
           >
             <FaInstagram />
@@ -110,7 +110,7 @@ export default function Navbar() {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-gray-700 transition text-lg sm:text-base"
+            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-gray-700 transition"
             aria-label="GitHub"
           >
             <FaGithub />
@@ -119,7 +119,7 @@ export default function Navbar() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-blue-700 transition text-lg sm:text-base"
+            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-700 transition"
             aria-label="LinkedIn"
           >
             <FaLinkedinIn />
@@ -133,79 +133,79 @@ export default function Navbar() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             <a
               href="#hero"
-              className="block text-base sm:text-sm text-white hover:text-orange-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </a>
             <a
               href="#about"
-              className="block text-base sm:text-sm text-white hover:text-orange-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </a>
             <a
               href="#project"
-              className="block text-base sm:text-sm text-white hover:text-blue-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-blue-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Projects
             </a>
             <a
               href="#education"
-              className="block text-base sm:text-sm text-white hover:text-orange-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Education
             </a>
             <a
               href="#experience"
-              className="block text-base sm:text-sm text-white hover:text-orange-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Experience
             </a>
             <a
               href="#contact"
-              className="block text-base sm:text-sm text-white hover:text-orange-500 transition"
+              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
             </a>
             <div className="flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10 mt-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=100021982362034"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-600 transition text-lg sm:text-base"
+                className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-600 transition"
                 aria-label="Facebook"
               >
                 <FaFacebookF />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/jpa.alva"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-pink-500 transition text-lg sm:text-base"
+                className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-pink-500 transition"
                 aria-label="Instagram"
               >
                 <FaInstagram />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/jpalvarado101"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-700 transition text-lg sm:text-base"
+                className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-gray-700 transition"
                 aria-label="GitHub"
               >
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/johnfalvarado"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-700 transition text-lg sm:text-base"
+                className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-700 transition"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
