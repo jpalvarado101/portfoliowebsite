@@ -13,28 +13,46 @@ const ProjectSection = () => {
   const cardsAnimation = useAnimation();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          textAnimation.start("visible"); // Trigger text animation first
-          setTimeout(() => {
-            cardsAnimation.start("visible"); // Trigger cards animation after delay
-          }, 500); // Delay after text animation starts
-        } else {
-          textAnimation.start("hidden");
-          cardsAnimation.start("hidden");
-        }
-      },
-      { threshold: 0.2 } // Trigger when 20% of the section is visible
-    );
+    let lastScrollY = window.scrollY;
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
+    const checkInitialPosition = () => {
+      const sectionTop = ref.current?.getBoundingClientRect().top || 0;
+      if (sectionTop < window.innerHeight * 0.8) {
+        // Trigger animations if already in view on refresh
+        textAnimation.start("visible");
+        cardsAnimation.start("visible");
+      } else {
+        // Reset animations
+        textAnimation.start("hidden");
+        cardsAnimation.start("hidden");
+      }
     };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const sectionTop = ref.current?.getBoundingClientRect().top || 0;
+
+      if (
+        sectionTop < window.innerHeight * 0.8 &&
+        currentScrollY > lastScrollY
+      ) {
+        // Trigger animations when scrolling down into the section
+        textAnimation.start("visible");
+        cardsAnimation.start("visible");
+      } else if (sectionTop > window.innerHeight * 0.8) {
+        // Reset animations when leaving the section upwards
+        textAnimation.start("hidden");
+        cardsAnimation.start("hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    // Check the position immediately on load
+    checkInitialPosition();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [textAnimation, cardsAnimation]);
 
   const cards = data.map((card, index) => (
@@ -49,7 +67,7 @@ const ProjectSection = () => {
           y: 0,
           transition: {
             duration: 1,
-            delay: 0.2 * index,
+            delay: 0.1 * index,
             ease: "easeOut",
           },
         },
@@ -91,7 +109,7 @@ const ProjectSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+              transition: { duration: 1, delay: 0.1, ease: "easeOut" },
             },
           }}
         >
