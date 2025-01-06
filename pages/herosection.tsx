@@ -30,7 +30,7 @@ const HeroSection = () => {
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
             Transforming Ideas <br />
-            Into <span className="text-orange-500">Reality</span>
+            Into <span className="text-[#343434]">Reality</span>
           </h1>
           <p className="text-lg text-gray-300 mb-6">
             Our automatic answer bot gets the customer details and logs their
@@ -47,10 +47,10 @@ const HeroSection = () => {
             }}
           >
             <button className="bg-gray-800 text-white px-6 py-3 rounded-md hover:bg-gray-700">
-              How others use it
+              Projects
             </button>
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 flex items-center">
-              Try for free <span className="ml-2">→</span>
+            <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-700 flex items-center">
+              Email <span className="ml-2">→</span>
             </button>
           </motion.div>
         </motion.div>
