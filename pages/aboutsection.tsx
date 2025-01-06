@@ -85,7 +85,7 @@ const AboutSection = () => {
     <section
       id="about"
       className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black 
-        min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12 font-sans"
+        min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12"
       ref={ref}
     >
       <div className="relative max-w-7xl w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
@@ -104,7 +104,7 @@ const AboutSection = () => {
           }}
         >
           <motion.h2
-            className="mt-20 sm:mt-10 lg:mt-0 text-3xl sm:text-4xl lg:text-5xl text-[#343434] font-bold"
+            className="mt-20 sm:mt-5 lg:mt-0 text-3xl sm:text-4xl lg:text-6xl text-[#343434] font-bold"
             initial="hidden"
             animate={headingAnimation}
             variants={{
@@ -115,12 +115,11 @@ const AboutSection = () => {
                 transition: { duration: 2, ease: "easeOut" },
               },
             }}
-            style={{ fontFamily: "Helvetica Neue, sans-serif" }}
           >
             Who is John?
           </motion.h2>
           <motion.p
-            className="mt-10 lg:mt-40 text-base sm:text-lg lg:text-xl text-[#343434] mb-6 leading-relaxed"
+            className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-[#343434] mb-6 leading-relaxed"
             initial="hidden"
             animate={paragraphAnimation}
             variants={{
@@ -131,7 +130,6 @@ const AboutSection = () => {
                 transition: { duration: 2, delay: 0.1, ease: "easeOut" },
               },
             }}
-            style={{ fontFamily: "Helvetica Neue, sans-serif" }}
           >
             As a Computer Engineering graduate with a strong foundation in
             machine learning (ML), artificial intelligence (AI), and computer

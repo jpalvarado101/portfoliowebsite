@@ -26,7 +26,7 @@ const HeroSection = () => {
           }}
         >
           <p className="text-sm uppercase font-bold text-gray-400 mb-4">
-            12,635 Happy Users
+            5+ YEARS OF PROJECT & WORK EXPERIENCE
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
             Transforming Ideas <br />
