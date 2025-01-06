@@ -93,9 +93,11 @@ export function ExperienceSection() {
   }, [textAnimation]);
 
   return (
-    <div ref={ref} className="w-full bg-black text-white z-50">
-      <Timeline data={data} />
-    </div>
+    <section id="experience" className="bg-black z-40">
+      <div ref={ref} className="w-full bg-black text-white z-50">
+        <Timeline data={data} />
+      </div>
+    </section>
   );
 }
 

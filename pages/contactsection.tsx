@@ -28,7 +28,7 @@ const ContactSection = () => {
   }, [headingAnimation, detailsAnimation, imageAnimation]);
 
   return (
-    <section id="contact" className="contact-section bg-black z-50" ref={ref}>
+    <section id="contact" className="contact-section bg-black z-40" ref={ref}>
       <div className="contact-left">
         <motion.h2
           className="contact-name"
@@ -36,7 +36,7 @@ const ContactSection = () => {
           animate={headingAnimation}
           variants={{
             hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
           }}
         >
           John Alvarado
@@ -50,7 +50,7 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.1 },
+              transition: { duration: 0.8, delay: 0.1 },
             },
           }}
         >
@@ -65,7 +65,7 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.2 },
+              transition: { duration: 0.8, delay: 0.2 },
             },
           }}
         >
@@ -89,7 +89,7 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.3 },
+              transition: { duration: 0.8, delay: 0.3 },
             },
           }}
         >
@@ -106,7 +106,7 @@ const ContactSection = () => {
           visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 1, delay: 0.4 },
+            transition: { duration: 0.8, delay: 0.4 },
           },
         }}
       >
