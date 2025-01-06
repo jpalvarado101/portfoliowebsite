@@ -21,9 +21,9 @@ export default function Home() {
         {/* White Section */}
         <ProjectSection />
 
-        <EducationSection />
-
         <ExperienceSection />
+
+        <EducationSection />
       </main>
     </>
   );
