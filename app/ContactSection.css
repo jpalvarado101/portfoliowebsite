@@ -61,3 +61,31 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Ensure the text is visible in the input and textarea fields */
+.contact-input,
+.contact-textarea {
+  background-color: black; /* Background color of the fields */
+  color: white; /* Text color */
+  border: 1px solid white; /* Border color */
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%; /* Ensures it matches the width of the collabs button */
+  box-sizing: border-box; /* Prevents padding from affecting the total width */
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: gray; /* Placeholder text color */
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none; /* Removes default focus outline */
+  border-color: #00bcd4; /* Add a custom focus border color */
+}
+
+.contact-textarea {
+  height: 150px; /* Increase height for better visibility */
+  resize: none; /* Prevents resizing */
+}

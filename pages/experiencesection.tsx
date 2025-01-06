@@ -94,7 +94,7 @@ export function ExperienceSection() {
 
   return (
     <section id="experience" className="bg-black z-40">
-      <div ref={ref} className="w-full bg-black text-white z-50">
+      <div ref={ref} className="w-full bg-black text-white ">
         <Timeline data={data} />
       </div>
     </section>

@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/pages/herosection";
 import AboutSection from "@/pages/aboutsection";
 import ProjectSection from "@/pages/projectsection";
-import EducationSection from "@/pages/educationsection";
+// import EducationSection from "@/pages/educationsection";
 import ExperienceSection from "@/pages/experiencesection";
 import ContactSection from "@/pages/contactsection";
 
@@ -24,8 +24,8 @@ export default function Home() {
 
         <ExperienceSection />
 
-        <EducationSection />
-
+        {/*         <EducationSection />
+         */}
         <ContactSection />
       </main>
     </>

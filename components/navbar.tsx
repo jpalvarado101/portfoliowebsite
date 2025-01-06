@@ -46,17 +46,17 @@ export default function Navbar() {
             Projects
           </a>
           <a
-            href="#education"
+            href="#experience"
             className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
-            Education
+            Education & Experience
           </a>
-          <a
+          {/* <a
             href="#experience"
             className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
           >
             Experience
-          </a>
+          </a> */}
           <a
             href="#contact"
             className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"

@@ -28,7 +28,7 @@ const ContactSection = () => {
   }, [headingAnimation, detailsAnimation, imageAnimation]);
 
   return (
-    <section id="contact" className="contact-section bg-black z-40" ref={ref}>
+    <section id="contact" className="contact-section z-40" ref={ref}>
       <div className="contact-left">
         <motion.h2
           className="contact-name"
@@ -36,7 +36,7 @@ const ContactSection = () => {
           animate={headingAnimation}
           variants={{
             hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
           }}
         >
           John Alvarado
@@ -50,7 +50,7 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.8, delay: 0.1 },
+              transition: { duration: 1, delay: 0.1 },
             },
           }}
         >
@@ -65,12 +65,16 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.8, delay: 0.2 },
+              transition: { duration: 1, delay: 0.2 },
             },
           }}
         >
           <p className="contact-label">Email:</p>
-          <p className="contact-info">hello@reallygreatsite.com</p>
+          <p className="contact-info">
+            <a href="mailto:hello@reallygreatsite.com">
+              hello@reallygreatsite.com
+            </a>
+          </p>
 
           <p className="contact-label">Studio:</p>
           <p className="contact-info">
@@ -78,10 +82,53 @@ const ContactSection = () => {
             <br />
             Any City, ST 12345
           </p>
+
+          {/* Contact Form */}
+          <motion.form
+            className="contact-form"
+            initial="hidden"
+            animate={detailsAnimation}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1, delay: 0.5 },
+              },
+            }}
+          >
+            <div className="contact-form-group">
+              <input
+                type="text"
+                placeholder="Enter your Name"
+                className="contact-input styled-input contact-box"
+              />
+            </div>
+            <br />
+            <div className="contact-form-group">
+              <input
+                type="email"
+                placeholder="Enter a valid email address"
+                className="contact-input styled-input contact-box"
+              />
+            </div>
+            <br />
+            <div className="contact-form-group">
+              <textarea
+                placeholder="Enter your message"
+                className="contact-textarea styled-textarea contact-box"
+              ></textarea>
+            </div>
+            <div className="contact-form-group">
+              <button type="submit" className="contact-submit contact-box">
+                Send Message
+              </button>
+            </div>
+          </motion.form>
         </motion.div>
         <motion.a
           href="#"
-          className="contact-collabs"
+          className="contact-collabs contact-button contact-box"
           initial="hidden"
           animate={detailsAnimation}
           variants={{
@@ -89,7 +136,7 @@ const ContactSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.8, delay: 0.3 },
+              transition: { duration: 1, delay: 0.3 },
             },
           }}
         >
@@ -106,7 +153,7 @@ const ContactSection = () => {
           visible: {
             opacity: 1,
             scale: 1,
-            transition: { duration: 0.8, delay: 0.4 },
+            transition: { duration: 1, delay: 0.4 },
           },
         }}
       >
