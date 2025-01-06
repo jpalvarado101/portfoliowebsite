@@ -5,6 +5,7 @@ import React, { useRef, useEffect } from "react";
 
 const AboutSection = () => {
   const ref = useRef<HTMLDivElement | null>(null);
+  const isAnimating = useRef(false); // Flag to track animation state
 
   // Animation controls for elements
   const headingAnimation = useAnimation();
@@ -14,38 +15,60 @@ const AboutSection = () => {
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
-    const checkInitialPosition = () => {
+    const checkInitialPosition = async () => {
       const sectionTop = ref.current?.getBoundingClientRect().top || 0;
       if (sectionTop < window.innerHeight * 0.8) {
-        // Trigger animations if already in view on refresh
-        headingAnimation.start("visible");
-        paragraphAnimation.start("visible");
-        imageAnimation.start("visible");
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+          await Promise.all([
+            headingAnimation.start("visible"),
+            paragraphAnimation.start("visible"),
+            imageAnimation.start("visible"),
+          ]);
+          isAnimating.current = false;
+        }
       } else {
-        // Reset animations
-        headingAnimation.start("hidden");
-        paragraphAnimation.start("hidden");
-        imageAnimation.start("hidden");
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+          await Promise.all([
+            headingAnimation.start("hidden"),
+            paragraphAnimation.start("hidden"),
+            imageAnimation.start("hidden"),
+          ]);
+          isAnimating.current = false;
+        }
       }
     };
 
-    const handleScroll = () => {
+    const handleScroll = async () => {
       const currentScrollY = window.scrollY;
       const sectionTop = ref.current?.getBoundingClientRect().top || 0;
+
+      if (isAnimating.current) {
+        return; // Prevent interrupting if an animation is ongoing
+      }
 
       if (
         sectionTop < window.innerHeight * 0.8 &&
         currentScrollY > lastScrollY
       ) {
         // Trigger animations when scrolling down into the section
-        headingAnimation.start("visible");
-        paragraphAnimation.start("visible");
-        imageAnimation.start("visible");
+        isAnimating.current = true;
+        await Promise.all([
+          headingAnimation.start("visible"),
+          paragraphAnimation.start("visible"),
+          imageAnimation.start("visible"),
+        ]);
+        isAnimating.current = false;
       } else if (sectionTop > window.innerHeight * 0.8) {
         // Reset animations when leaving the section upwards
-        headingAnimation.start("hidden");
-        paragraphAnimation.start("hidden");
-        imageAnimation.start("hidden");
+        isAnimating.current = true;
+        await Promise.all([
+          headingAnimation.start("hidden"),
+          paragraphAnimation.start("hidden"),
+          imageAnimation.start("hidden"),
+        ]);
+        isAnimating.current = false;
       }
 
       lastScrollY = currentScrollY;
@@ -76,7 +99,7 @@ const AboutSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, ease: "easeOut" },
+              transition: { duration: 2, ease: "easeOut" },
             },
           }}
         >
@@ -89,7 +112,7 @@ const AboutSection = () => {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1, ease: "easeOut" },
+                transition: { duration: 2, ease: "easeOut" },
               },
             }}
             style={{ fontFamily: "Helvetica Neue, sans-serif" }}
@@ -105,7 +128,7 @@ const AboutSection = () => {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1, delay: 0.1, ease: "easeOut" },
+                transition: { duration: 2, delay: 0.1, ease: "easeOut" },
               },
             }}
             style={{ fontFamily: "Helvetica Neue, sans-serif" }}
@@ -124,7 +147,7 @@ const AboutSection = () => {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1, delay: 0.3, ease: "easeOut" },
+                transition: { duration: 2, delay: 0.3, ease: "easeOut" },
               },
             }}
           />
@@ -140,7 +163,7 @@ const AboutSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.4, ease: "easeOut" },
+              transition: { duration: 2, delay: 0.4, ease: "easeOut" },
             },
           }}
         >
@@ -155,7 +178,7 @@ const AboutSection = () => {
                 visible: {
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 1, delay: 0.5, ease: "easeOut" },
+                  transition: { duration: 2, delay: 0.5, ease: "easeOut" },
                 },
               }}
             />

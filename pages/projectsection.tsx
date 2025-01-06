@@ -7,6 +7,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 const ProjectSection = () => {
   const ref = useRef(null);
+  const isAnimating = useRef(false); // Flag to track animation state
 
   // Animation controls for text and cards
   const textAnimation = useAnimation();
@@ -15,34 +16,56 @@ const ProjectSection = () => {
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
-    const checkInitialPosition = () => {
+    const checkInitialPosition = async () => {
       const sectionTop = ref.current?.getBoundingClientRect().top || 0;
       if (sectionTop < window.innerHeight * 0.8) {
-        // Trigger animations if already in view on refresh
-        textAnimation.start("visible");
-        cardsAnimation.start("visible");
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+          await Promise.all([
+            textAnimation.start("visible"),
+            cardsAnimation.start("visible"),
+          ]);
+          isAnimating.current = false;
+        }
       } else {
-        // Reset animations
-        textAnimation.start("hidden");
-        cardsAnimation.start("hidden");
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+          await Promise.all([
+            textAnimation.start("hidden"),
+            cardsAnimation.start("hidden"),
+          ]);
+          isAnimating.current = false;
+        }
       }
     };
 
-    const handleScroll = () => {
+    const handleScroll = async () => {
       const currentScrollY = window.scrollY;
       const sectionTop = ref.current?.getBoundingClientRect().top || 0;
+
+      if (isAnimating.current) {
+        return; // Prevent interrupting if an animation is ongoing
+      }
 
       if (
         sectionTop < window.innerHeight * 0.8 &&
         currentScrollY > lastScrollY
       ) {
         // Trigger animations when scrolling down into the section
-        textAnimation.start("visible");
-        cardsAnimation.start("visible");
+        isAnimating.current = true;
+        await Promise.all([
+          textAnimation.start("visible"),
+          cardsAnimation.start("visible"),
+        ]);
+        isAnimating.current = false;
       } else if (sectionTop > window.innerHeight * 0.8) {
         // Reset animations when leaving the section upwards
-        textAnimation.start("hidden");
-        cardsAnimation.start("hidden");
+        isAnimating.current = true;
+        await Promise.all([
+          textAnimation.start("hidden"),
+          cardsAnimation.start("hidden"),
+        ]);
+        isAnimating.current = false;
       }
 
       lastScrollY = currentScrollY;
@@ -66,8 +89,8 @@ const ProjectSection = () => {
           opacity: 1,
           y: 0,
           transition: {
-            duration: 1,
-            delay: 0.1 * index,
+            duration: 2,
+            delay: 0.2 * index,
             ease: "easeOut",
           },
         },
@@ -94,7 +117,7 @@ const ProjectSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, ease: "easeOut" },
+              transition: { duration: 2, ease: "easeOut" },
             },
           }}
         >
@@ -109,7 +132,7 @@ const ProjectSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, delay: 0.1, ease: "easeOut" },
+              transition: { duration: 2, delay: 0.2, ease: "easeOut" },
             },
           }}
         >
@@ -126,7 +149,7 @@ const ProjectSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 1, ease: "easeOut" },
+              transition: { duration: 2, ease: "easeOut" },
             },
           }}
         >

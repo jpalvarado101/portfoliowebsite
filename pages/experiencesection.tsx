@@ -8,59 +8,64 @@ export function ExperienceSection() {
       title: "2024",
       content: (
         <div>
-          <h3 className="text-4xl font-bold">Senior Software Engineer</h3>
-          <p className="italic text-2xl">Heiman Software Labs</p>
-          <p className="mt-2">
-            Provides direction for applications in development. Researches and
-            develops new ways to improve our development process. Mentors Junior
-            Software Engineers.
+          <h1 className="text-4xl font-bold">
+            Founder & CEO, AI/Computer Vision Lead
+          </h1>
+          <p className="italic text-2xl">inDoors™</p>
+          <p className="italic text-lg">Jan 2024 - present</p>
+          <p className="mt-2 text-lg">
+            Developed AI-driven computer vision solutions using Python,
+            TensorFlow. Led a team in deep learning, data modeling, algorithm
+            optimization, and deploying scalable ML systems. Spearheaded product
+            innovation and advanced data analysis.
           </p>
+          <br />
 
-          <p className="text-neutral-800 dark:text-neutral-200 text-5xl sm:text-2xl mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p>
+          <h2 className="text-4xl font-bold">
+            Bachelor of Applied Science - Computer Engineering
+          </h2>
+          <p className="italic text-2xl">Simon Fraser University</p>
+          <p className="italic text-lg">Aug 2024</p>
+          <p className="mt-2 text-lg">Co-op Distinction.</p>
+          <br />
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "2022",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-4xl sm:text-2xl font-normal mb-8">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+          <h3 className="text-4xl font-bold">Co-Founder & Co-President</h3>
+          <p className="italic text-2xl">
+            SFU Coop Hub (SCOOP™) by Simon Fraser University
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-4xl sm:text-2xl font-normal mb-8">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+          <p className="italic text-lg">Aug 2020 - Jan 2022</p>
+          <p className="mt-2 text-lg">
+            Co-founded and led SFU Coop Hub (SCOOP™), scaling membership to 468+
+            and team to 10+. Organized industry workshops and networking events,
+            showcasing leadership, team building, and event management skills to
+            enhance professional development opportunities.
           </p>
+          <br />
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "2020",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-4xl sm:text-2xl font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+          <h4 className="text-4xl font-bold">IT Analyst/ Software Developer</h4>
+          <p className="italic text-2xl">Microserve</p>
+          <p className="italic text-lg">Jan 2020 - Dec 2020</p>
+          <p className="mt-2 text-lg">
+            Provided IT tech analysis and support at Microserve, troubleshooting
+            IT issues, deploying PCs, and managing tickets via Kanban. Automated
+            UBC finance API billing using C#, PHP, JavaScript, and SQL/MySQL.
+            Built SQL reports, automated tasks, and ensured 100% client
+            satisfaction. Recognized for outstanding service by clients, managed
+            IT assets, and collaborated across teams to deliver efficient IT
+            solutions.
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl">
-              ✅ Card grid component
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
         </div>
       ),
     },
