@@ -104,7 +104,7 @@ const AboutSection = () => {
           }}
         >
           <motion.h2
-            className="mt-20 sm:mt-5 lg:mt-0 text-3xl sm:text-4xl lg:text-6xl text-[#343434] font-bold"
+            className="mt-20 sm:mt-5 lg:mt-0 text-3xl sm:text-4xl lg:text-[5rem] lg:leading-[1.2] text-[#343434] "
             initial="hidden"
             animate={headingAnimation}
             variants={{
@@ -116,7 +116,7 @@ const AboutSection = () => {
               },
             }}
           >
-            Who is John?
+            WHO IS JOHN?
           </motion.h2>
           <motion.p
             className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-[#343434] mb-6 leading-relaxed"
