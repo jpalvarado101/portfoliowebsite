@@ -25,16 +25,16 @@ const HeroSection = () => {
             ease: "easeOut",
           }}
         >
-          <p className="text-base sm:text-sm uppercase font-bold text-gray-400 mb-4">
+          <p className="text-base  uppercase font-bold text-gray-400 mb-4">
             5+ YEARS OF PROJECT & WORK EXPERIENCE
           </p>
-          <h1 className="lg:text-[5rem] lg:leading-[1.2] sm:text-5xl  text-white mb-6">
+          <h1 className="lg:text-[5rem] lg:leading-[1.2]  text-white mb-6">
             Transforming Ideas Into{" "}
             <span className="text-[#343434]">Reality</span>
           </h1>
-          <p className="lg:text-lg sm:text-sm text-gray-300 mb-6">
-            Our automatic answer bot gets the customer details and logs their
-            issue for you. Even if the line is busy.
+          <p className="lg:text-2xl  text-gray-300 mb-6">
+            John is a computer engineer who specializes in machine learning,
+            deep learning and AI living in Vancouver.
           </p>
           <motion.div
             className="flex flex-wrap justify-center lg:justify-start space-x-4"
