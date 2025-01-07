@@ -119,7 +119,7 @@ const AboutSection = () => {
             WHO IS JOHN?
           </motion.h2>
           <motion.p
-            className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-[#343434] mb-6 leading-relaxed"
+            className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-black mb-6 leading-relaxed"
             initial="hidden"
             animate={paragraphAnimation}
             variants={{
@@ -131,10 +131,20 @@ const AboutSection = () => {
               },
             }}
           >
-            As a Computer Engineering graduate with a strong foundation in
-            machine learning (ML), artificial intelligence (AI), and computer
-            vision, I specialize in designing and optimizing scalable AI systems
-            that solve real-world problems.
+            Hi there! I’m a Machine Learning and Computer Engineer with a
+            Bachelor of Applied Science in Computer Engineering from Simon
+            Fraser University. I specialize in creating high-performance AI
+            solutions and have hands-on experience with tools like Python,
+            PyTorch, TensorFlow, and CUDA, as well as techniques such as CNNs,
+            model quantization, and computer vision. Some of my recent work
+            includes inDoors™, an AI-powered indoor navigation system with 100%
+            feature detection accuracy and automatically generates maps for use
+            in a custom-built navigation app, and MediScanAI™, a lung disease
+            classifier that reduced model size by 400% while maintaining 93%
+            accuracy compared to the best public deep learning models. I’m
+            passionate about solving challenging problems and excited to bring
+            my expertise to impactful projects. Let’s connect to discuss how I
+            can contribute to your team!
           </motion.p>
           <motion.hr
             className="border-2 border-[#343434] w-40 mb-10"

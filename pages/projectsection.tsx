@@ -109,7 +109,7 @@ const ProjectSection = () => {
       <div className="w-full h-full py-20">
         {/* Animated Headings */}
         <motion.h2
-          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-[#343434] font-sans"
+          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-[#343434]"
           initial="hidden"
           animate={textAnimation}
           variants={{
@@ -124,7 +124,7 @@ const ProjectSection = () => {
           Get to know me more.
         </motion.h2>
         <motion.h4
-          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-black font-sans mt-4"
+          className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-black mt-4"
           initial="hidden"
           animate={textAnimation}
           variants={{
@@ -169,7 +169,7 @@ const data = [
     src: "/inDoorsapp_waifu2x_photo_noise2.png",
     content: (
       <div>
-        <p className="text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           Artificial Intelligence is revolutionizing the way we interact with
           technology. Experience the power of AI-driven tools tailored for you.
         </p>
@@ -190,7 +190,7 @@ const data = [
     content: (
       <div>
         <h3 className="text-xl font-bold">Stay organized like never before</h3>
-        <p className="text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           Discover tools designed to boost your efficiency and manage your tasks
           seamlessly.
         </p>
@@ -213,7 +213,7 @@ const data = [
         <h3 className="text-xl font-bold text-center">
           The Future of Visual Computing
         </h3>
-        <p className="text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           Apple Vision Pro redefines augmented reality with unparalleled
           features and a sleek design.
         </p>
@@ -226,7 +226,7 @@ const data = [
     src: "/google-deepmind-Oy2yXvl1WLg-unsplash.jpg",
     content: (
       <div>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           Get the most out of your iPhone 15 Pro Max with advanced Maps
           features, including real-time navigation and AR support.
         </p>
@@ -240,7 +240,7 @@ const data = [
     content: (
       <div>
         <h3 className="text-xl font-bold text-center">Capture Every Moment</h3>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           With iOS’s enhanced photography tools, elevate your pictures to
           professional quality.
         </p>
@@ -254,7 +254,7 @@ const data = [
     content: (
       <div>
         <h3 className="text-xl font-bold">Join Our Team</h3>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans">
+        <p className="text-neutral-400 text-base md:text-2xl">
           We are looking for talented software engineers passionate about
           innovation and teamwork.
         </p>
