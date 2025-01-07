@@ -33,22 +33,28 @@ const HeroSection = () => {
           }}
         >
           {/* Tagline */}
+
           <p className="text-sm uppercase font-bold text-gray-400 mb-2">
             Building tomorrow’s technology, today.
           </p>
 
           {/* Main Heading */}
-          <h1 className="lg:text-[4rem] lg:leading-[1.2] text-white mb-6">
-            <span className="text-white">
+          <h1 className="lg:text-[4rem] lg:leading-[1.2]mb-6">
+            <span className="text-[#A29BFE]">
               John is a Computer Engineering Graduate living in Vancouver who
               specializes in
-              <FlipWords words={words} duration={500} /> <br />
+              <FlipWords
+                className="text-white"
+                words={words}
+                duration={500}
+              />{" "}
+              <br />
             </span>{" "}
           </h1>
 
           {/* Personal Summary: Following the desired shape */}
           <div className="flex flex-col space-y-2 mb-6">
-            <p className="lg:text-xl text-gray-300 text-center lg:text-left">
+            <p className="lg:text-[1.5rem] text-gray-300 text-center lg:text-left">
               With expertise in frameworks like PyTorch, TensorFlow, and OpenCV,
               <br />
               he delivers innovative, scalable solutions for real-world
@@ -58,10 +64,11 @@ const HeroSection = () => {
               AI systems that drive innovation.
             </p>
 
-            <p className="lg:text-lg text-gray-300 text-center lg:text-left">
-              Let’s connect to explore how my expertise <br />
-              can make a difference.
+            <p className="lg:text-[1.5rem] text-gray-300 text-center lg:text-left">
+              Let’s connect and see how I can help
+              <br /> make a difference for you!
             </p>
+            <p className="text-[1.5rem]  text-white mb-2">John Alvarado</p>
           </div>
 
           {/* Call-to-Action Buttons */}

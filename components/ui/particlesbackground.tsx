@@ -22,12 +22,12 @@ const ParticlesBackground = () => {
     },
     fpsLimit: 120,
     particles: {
-      color: { value: "#ffffff" }, // White particles
+      color: { value: "#4DD0E1" }, // White particles
       links: {
-        color: "#ffffff",
+        color: "#4DD0E1",
         enable: true,
         distance: 170, // Increase link distance for more connections
-        opacity: 1,
+        opacity: 0.5,
         width: 1, // Thicker links for better visibility
       },
       move: {
