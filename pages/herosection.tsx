@@ -2,8 +2,15 @@
 
 import { motion } from "framer-motion";
 import ParticlesBackground from "@/components/ui/particlesbackground";
+import { FlipWords } from "@/components/ui/flip-words";
 
 const HeroSection = () => {
+  const words = [
+    "Machine Learning",
+    "Artificial Intelligence",
+    "Computer Vision",
+  ];
+
   return (
     <section
       id="hero"
@@ -16,7 +23,7 @@ const HeroSection = () => {
       <div className="w-full z-10 relative flex flex-wrap items-center justify-between px-6 sm:px-12 lg:px-24 xl:px-32">
         {/* Left Content: Text */}
         <motion.div
-          className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
+          className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 bg-black z-40"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -27,34 +34,33 @@ const HeroSection = () => {
         >
           {/* Tagline */}
           <p className="text-sm uppercase font-bold text-gray-400 mb-2">
-            Computer Engineering Graduate with Expertise in AI & ML
+            Building tomorrow’s technology, today.
           </p>
 
           {/* Main Heading */}
           <h1 className="lg:text-[4rem] lg:leading-[1.2] text-white mb-6">
-            Turning complex AI ideas into{" "}
-            <span className="text-[#00bcd4]">
-              tangible, impactful solutions
-            </span>
+            <span className="text-white">
+              John is a Computer Engineering Graduate living in Vancouver who
+              specializes in
+              <FlipWords words={words} duration={500} /> <br />
+            </span>{" "}
           </h1>
 
           {/* Personal Summary: Following the desired shape */}
           <div className="flex flex-col space-y-2 mb-6">
             <p className="lg:text-xl text-gray-300 text-center lg:text-left">
-              I’m passionate about creating scalable systems that solve
-              real-world problems.
+              With expertise in frameworks like PyTorch, TensorFlow, and OpenCV,
+              <br />
+              he delivers innovative, scalable solutions for real-world
+              challenges. <br />
+              Proficient in deep learning, model optimization, and GPU <br />
+              acceleration, John is passionate about creating <br /> impactful
+              AI systems that drive innovation.
             </p>
+
             <p className="lg:text-lg text-gray-300 text-center lg:text-left">
-              From leading projects like inDoors™ and MediScanAI™ to optimizing
-              deep learning models, I bring research into real-world
-              application.
-            </p>
-            <p className="lg:text-lg text-gray-300 text-center lg:text-left">
-              Skilled in Python, C++, TensorFlow, PyTorch, CUDA, and more to
-              create innovative AI-powered solutions.
-            </p>
-            <p className="lg:text-lg text-gray-300 text-center lg:text-left">
-              Let’s connect to explore how my expertise can make a difference.
+              Let’s connect to explore how my expertise <br />
+              can make a difference.
             </p>
           </div>
 

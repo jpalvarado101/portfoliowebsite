@@ -84,11 +84,11 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-[#b4b0ab] text-black 
+      className="relative flex flex-wrap lg:flex-nowrap justify-center items-center bg-black text-white 
         min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12"
       ref={ref}
     >
-      <div className="relative ml-10   w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
+      <div className="relative ml-10 w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
         {/* Left Content: Text */}
         <motion.div
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
@@ -99,12 +99,12 @@ const AboutSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 2, ease: "easeOut" },
+              transition: { duration: 1.5, ease: "easeOut" },
             },
           }}
         >
           <motion.h2
-            className="text-5xl lg:text-[5rem] leading-[1.2] mb-12 text-[#343434]" // Apply .contact-title styles
+            className="text-5xl lg:text-[5rem] leading-[1.2] mb-12 text-white" // Text now white
             initial="hidden"
             animate={headingAnimation}
             variants={{
@@ -112,14 +112,14 @@ const AboutSection = () => {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 2, ease: "easeOut" },
+                transition: { duration: 1.5, ease: "easeOut" },
               },
             }}
           >
             ABOUT ME?
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6" // Apply .contact-info styles
+            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 text-white" // Text now white
             initial="hidden"
             animate={paragraphAnimation}
             variants={{
@@ -127,7 +127,7 @@ const AboutSection = () => {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 2, delay: 0.1, ease: "easeOut" },
+                transition: { duration: 1.5, delay: 0.1, ease: "easeOut" },
               },
             }}
           >
@@ -165,7 +165,7 @@ const AboutSection = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 2, delay: 0.4, ease: "easeOut" },
+              transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
             },
           }}
         >
@@ -182,7 +182,7 @@ const AboutSection = () => {
                 visible: {
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 2, delay: 0.5, ease: "easeOut" },
+                  transition: { duration: 1.5, delay: 0.5, ease: "easeOut" },
                 },
               }}
             />
