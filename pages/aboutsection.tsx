@@ -104,7 +104,7 @@ const AboutSection = () => {
           }}
         >
           <motion.h2
-            className="mt-20 sm:mt-5 lg:mt-0 text-3xl sm:text-4xl lg:text-[5rem] lg:leading-[1.2] text-[#343434] "
+            className="text-5xl lg:text-[5rem] leading-[1.2] mb-12 text-[#343434]" // Apply .contact-title styles
             initial="hidden"
             animate={headingAnimation}
             variants={{
@@ -119,7 +119,7 @@ const AboutSection = () => {
             ABOUT ME?
           </motion.h2>
           <motion.p
-            className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-black mb-6 leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6" // Apply .contact-info styles
             initial="hidden"
             animate={paragraphAnimation}
             variants={{
@@ -139,37 +139,25 @@ const AboutSection = () => {
             and have hands-on experience with tools like Python, PyTorch,
             TensorFlow, and CUDA. My expertise extends to advanced techniques
             such as CNNs, model quantization, and computer vision.
-            <br /> <br />
+            <br />
+            <br />
             Some of my recent work includes: <br />
             <strong>inDoors™</strong>: An AI-powered indoor navigation system
             that boasts 100% feature detection accuracy and automatically
             generates maps for use in a custom-built navigation app. <br />
             <strong>MediScanAI™</strong>: A lung disease classifier that reduced
             model size by 400% while maintaining 93% accuracy, outperforming the
-            best public deep learning models. <br /> <br />
+            best public deep learning models. <br />
+            <br />
             I’m passionate about solving challenging problems and am excited to
             bring my expertise to impactful projects. Let’s connect and discuss
             how I can contribute to your team!
           </motion.p>
-
-          <motion.hr
-            className="border-2 border-[#343434] w-72 mb-10"
-            initial="hidden"
-            animate={headingAnimation}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 2, delay: 0.3, ease: "easeOut" },
-              },
-            }}
-          />
         </motion.div>
 
-        {/* Right Content: Circular Image */}
+        {/* Right Content: Full-Height Image */}
         <motion.div
-          className="flex-1 flex justify-center"
+          className="flex-1 flex justify-center h-full" // Ensure the container takes full height
           initial="hidden"
           animate={imageAnimation}
           variants={{
@@ -181,10 +169,12 @@ const AboutSection = () => {
             },
           }}
         >
-          <div className="   overflow-hidden w-full min-h-full ">
+          <div className="overflow-hidden w-full h-full">
+            {" "}
+            {/* Parent container for the image */}
             <motion.img
-              src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
-              className="object-cover "
+              src="/1.jpg" // Replace with your image path
+              className="object-cover w-full h-full" // Ensures image covers the entire container
               initial="hidden"
               animate={imageAnimation}
               variants={{
