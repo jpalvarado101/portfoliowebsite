@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="w-full z-10 relative flex flex-wrap items-center justify-between px-6 sm:px-12 lg:px-24 xl:px-32">
         {/* Left Content: Text */}
         <motion.div
-          className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 bg-black z-40"
+          className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
