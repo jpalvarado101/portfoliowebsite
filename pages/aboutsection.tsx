@@ -116,7 +116,7 @@ const AboutSection = () => {
               },
             }}
           >
-            WHO IS JOHN?
+            ABOUT ME?
           </motion.h2>
           <motion.p
             className="mt-10 lg:mt-30 text-base sm:text-lg lg:text-2xl text-black mb-6 leading-relaxed"
@@ -131,23 +131,29 @@ const AboutSection = () => {
               },
             }}
           >
-            Hi there! I’m a Machine Learning and Computer Engineer with a
-            Bachelor of Applied Science in Computer Engineering from Simon
-            Fraser University. I specialize in creating high-performance AI
-            solutions and have hands-on experience with tools like Python,
-            PyTorch, TensorFlow, and CUDA, as well as techniques such as CNNs,
-            model quantization, and computer vision. Some of my recent work
-            includes inDoors™, an AI-powered indoor navigation system with 100%
-            feature detection accuracy and automatically generates maps for use
-            in a custom-built navigation app, and MediScanAI™, a lung disease
-            classifier that reduced model size by 400% while maintaining 93%
-            accuracy compared to the best public deep learning models. I’m
-            passionate about solving challenging problems and excited to bring
-            my expertise to impactful projects. Let’s connect to discuss how I
-            can contribute to your team!
+            Hi, I'm John! <br />
+            <br />
+            I’m a Machine Learning and Computer Engineer with a Bachelor of
+            Applied Science in Computer Engineering from Simon Fraser
+            University. I specialize in creating high-performance AI solutions
+            and have hands-on experience with tools like Python, PyTorch,
+            TensorFlow, and CUDA. My expertise extends to advanced techniques
+            such as CNNs, model quantization, and computer vision.
+            <br /> <br />
+            Some of my recent work includes: <br />
+            <strong>inDoors™</strong>: An AI-powered indoor navigation system
+            that boasts 100% feature detection accuracy and automatically
+            generates maps for use in a custom-built navigation app. <br />
+            <strong>MediScanAI™</strong>: A lung disease classifier that reduced
+            model size by 400% while maintaining 93% accuracy, outperforming the
+            best public deep learning models. <br /> <br />
+            I’m passionate about solving challenging problems and am excited to
+            bring my expertise to impactful projects. Let’s connect and discuss
+            how I can contribute to your team!
           </motion.p>
+
           <motion.hr
-            className="border-2 border-[#343434] w-40 mb-10"
+            className="border-2 border-[#343434] w-72 mb-10"
             initial="hidden"
             animate={headingAnimation}
             variants={{
