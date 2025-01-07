@@ -88,7 +88,7 @@ const AboutSection = () => {
         min-h-screen sm:h-auto overflow-hidden px-6 sm:px-12"
       ref={ref}
     >
-      <div className="relative max-w-7xl w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
+      <div className="relative ml-10   w-full z-10 flex flex-wrap lg:flex-nowrap items-center">
         {/* Left Content: Text */}
         <motion.div
           className="flex-1 lg:mr-8 mb-8 lg:mb-0"
@@ -181,10 +181,10 @@ const AboutSection = () => {
             },
           }}
         >
-          <div className="rounded-full overflow-hidden w-60 h-60 sm:w-80 sm:h-80">
+          <div className="   overflow-hidden w-full min-h-full ">
             <motion.img
               src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
-              className="object-cover w-full h-full"
+              className="object-cover "
               initial="hidden"
               animate={imageAnimation}
               variants={{

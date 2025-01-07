@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -13,6 +13,40 @@ export default function Navbar() {
   // State to handle mobile menu toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // State to determine if current view is mobile based on dynamic breakpoint
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  // Reference base width (e.g., 2560px)
+  const BASE_WIDTH = 2560;
+  // Desired breakpoint percentage (e.g., 58%)
+  const BREAKPOINT_PERCENTAGE = 0.58;
+  // Calculate fixed breakpoint based on BASE_WIDTH and BREAKPOINT_PERCENTAGE
+  const FIXED_BREAKPOINT = BASE_WIDTH * BREAKPOINT_PERCENTAGE; // 1490px
+
+  // Function to determine if current window width is less than the breakpoint
+  const checkIsMobile = () => {
+    const currentWidth = window.innerWidth;
+    if (currentWidth < FIXED_BREAKPOINT) {
+      setIsMobileView(true);
+    } else {
+      setIsMobileView(false);
+      setIsMobileMenuOpen(false); // Close mobile menu if switching to desktop view
+    }
+  };
+
+  useEffect(() => {
+    // Initial check
+    checkIsMobile();
+
+    // Add resize event listener
+    window.addEventListener("resize", checkIsMobile);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
+
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -26,55 +60,53 @@ export default function Navbar() {
       {/* Main Container */}
       <div className="relative flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 w-full">
         {/* Left Section: Links */}
-        <div className="hidden md:flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
-          <a
-            href="#hero"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-          >
-            About
-          </a>
-          <a
-            href="#project"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-blue-500 transition"
-          >
-            Projects
-          </a>
-          <a
-            href="#experience"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-          >
-            Education & Experience
-          </a>
-          {/* <a
-            href="#experience"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-          >
-            Experience
-          </a> */}
-          <a
-            href="#contact"
-            className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-          >
-            Contact
-          </a>
-        </div>
+        {!isMobileView && (
+          <div className="flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
+            <a
+              href="#hero"
+              className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
+            >
+              About
+            </a>
+            <a
+              href="#project"
+              className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-blue-500 transition"
+            >
+              Projects
+            </a>
+            <a
+              href="#education"
+              className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
+            >
+              Education & Experience
+            </a>
+            <a
+              href="#contact"
+              className="text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
+            >
+              Contact
+            </a>
+          </div>
+        )}
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={toggleMobileMenu}
-            className="text-white hover:text-orange-500 focus:outline-none transition text-xl"
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
+        {isMobileView && (
+          <div className="flex items-center">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-white hover:text-orange-500 focus:outline-none transition text-xl"
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
+        )}
 
         {/* Center Section: Logo */}
         <div className="absolute left-1/2 transform -translate-x-1/2">
@@ -87,49 +119,51 @@ export default function Navbar() {
         </div>
 
         {/* Right Section: Social Media Icons */}
-        <div className="hidden md:flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-600 transition"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-pink-500 transition"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-gray-700 transition"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-700 transition"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
-        </div>
+        {!isMobileView && (
+          <div className="flex space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-600 transition"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-pink-500 transition"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-gray-700 transition"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg sm:text-base lg:text-xl xl:text-2xl text-white hover:text-blue-700 transition"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#161617e6] backdrop-blur-md shadow-md">
+      {isMobileView && isMobileMenuOpen && (
+        <div className="bg-[#161617e6] backdrop-blur-md shadow-md">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <a
               href="#hero"
@@ -157,14 +191,7 @@ export default function Navbar() {
               className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Education
-            </a>
-            <a
-              href="#experience"
-              className="block text-base sm:text-sm lg:text-lg xl:text-xl text-white hover:text-orange-500 transition"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Experience
+              Education & Experience
             </a>
             <a
               href="#contact"

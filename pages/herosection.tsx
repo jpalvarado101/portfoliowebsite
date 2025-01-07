@@ -7,13 +7,13 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative flex justify-center items-center bg-black text-white min-h-screen h-auto"
+      className="relative flex justify-center items-center bg-black text-white min-h-screen h-auto w-full"
     >
       {/* Particles Background */}
       <ParticlesBackground />
 
       {/* Content */}
-      <div className="max-w-7xl w-full z-10 relative flex flex-wrap items-center justify-center lg:justify-between px-6 sm:px-12">
+      <div className="w-full z-10 relative flex flex-wrap items-center justify-between px-6 sm:px-12 lg:px-24 xl:px-32">
         {/* Left Content: Text */}
         <motion.div
           className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
         {/* Right Content: Key Visual */}
         <motion.div
-          className="w-full lg:w-1/2 flex justify-center"
+          className="w-full lg:w-1/2 flex justify-center lg:justify-end"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -99,7 +99,7 @@ const HeroSection = () => {
           <img
             src="/google-deepmind-Oy2yXvl1WLg-unsplash.jpg" // Replace with your image path
             alt="AI Engineer at Work"
-            className="max-w-full h-auto rounded-md"
+            className="max-w-full h-auto rounded-md shadow-lg"
           />
         </motion.div>
       </div>

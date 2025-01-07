@@ -98,7 +98,7 @@ export function ExperienceSection() {
   }, [textAnimation]);
 
   return (
-    <section id="experience" className="bg-black z-40">
+    <section id="education" className="bg-black z-40">
       <div ref={ref} className="w-full bg-black text-white ">
         <Timeline data={data} />
       </div>
