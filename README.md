@@ -68,3 +68,9 @@ Deployed on **Hostinger** using CI/CD pipelines for continuous delivery and auto
 ![Portfolio Section Screenshot](/web2.png)
 
 ---
+
+🚨 **License Notice:**  
+This project is under a **strict Read-Only License**.  
+✔️ You may **view** the code, but  
+❌ You **cannot copy, modify, use, or distribute** any part of it.  
+Violations may result in legal action. See the [LICENSE](LICENSE) file for details.
